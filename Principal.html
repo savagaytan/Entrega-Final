@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+           
+    body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 600px;
+}
+
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+* {
+                padding: 0px;
+                margin: 0px;
+            }
+            #header {
+                
+                margin: auto;
+                width: 500px;
+                font-family: inherit, inherit, sans-serif;
+            }
+            ul, ol {
+                list-style: none;
+            }
+            .nav li a {
+                background-color: white;
+                color: black;
+                text-decoration:none;
+                padding: 10px 15px;
+                display:block;
+            }
+
+            .nav li a:hover{
+                background-color: lightgrey;
+            }
+            .nav > li {
+                float: left;
+            }
+            .nav li ul {
+                display:none;
+                position: absolute;
+                min-width: 140px;
+            }
+            .nav li:hover > ul {
+                display: block;
+            }
+</style>
+    
+     
+<body style="background-color: white; border: 2px; width: 1200px; align-items: : center; margin: 0 auto">
+
+ <header>
+       <div align= "center" >
+             <br>
+        <h1 style="font-size: 50" >Renata del Águila</h1> 
+           <br>
+        </div>
+        <hr style="width: 600px; align-items: center; margin: 0 auto">
+       </header>
+<div id="header" > 
+       <div align="center"  style="background-color: white; border: 2px; width: 500px; align-items: center; margin: 0 auto">
+       <ul class="nav" style="background-color: white; border: 2px; width: 500px; align-items:center; margin: 0 auto"  >
+        <table style="background-color: white; border: 2px; width: 500px; align-items: center; margin: 0 auto">
+           <tr>
+               <td style="text-align: center"><li><a href="" ><b>Principal</b></a></li></td>
+            
+           <td style="text-align: center"><li><a href="Información.html">Información</a></li></td>
+               <td style="text-align: center; background-color: darkgrey"><li ><a href="">Contacto</a></li></td>
+          </table>
+           </ul>
+           </div></div>
+<br><br>
+<table style="background-color: white; border: 2px; width: 500px; align-items: center; margin: 0 auto">
+<div class="row">
+  <tr><div class="column">
+   <td> <img src="Tatuaje%201.png" style="width:200px; height: 200px" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </td></div>
+  <div class="column">
+  <td>  <img src="Tatuaje%202.jpeg" style="width:200px; height: 200px" onclick="openModal();currentSlide(2)" class="hover-shadow cursor"></td>
+  </div>
+  <div class="column">
+  <td>  <img src="Tatuaje%203.jpeg" style="width:200px; height: 200px" onclick="openModal();currentSlide(3)" class="hover-shadow cursor"></td>
+  </div>
+  <div class="column">
+  </div></tr>
+    
+    
+    <tr><div class="column">
+   <td> <img src="Tatuaje%204.jpeg" style="width:200px; height: 200px" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </td></div>
+  <div class="column">
+  <td>  <img src="Tatuaje%205.jpeg" style="width:200px; height: 200px" onclick="openModal();currentSlide(2)" class="hover-shadow cursor"></td>
+  </div>
+  <div class="column">
+  <td>  <img src="Tatuaje%206.jpeg" style="width:200px; height: 200px" onclick="openModal();currentSlide(3)" class="hover-shadow cursor"></td>
+  </div>
+  <div class="column">
+  
+  </div></tr>
+    
+    <tr><div class="column">
+   <td> <img src="Tatuaje%207.jpeg" style="width:200px; height: 200px" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </td></div>
+  <div class="column">
+  <td>  <img src="Tatuaje%208.jpeg" style="width:200px; height: 200px" onclick="openModal();currentSlide(2)" class="hover-shadow cursor"></td>
+  </div>
+  <div class="column">
+  <td>  <img src="Tatuaje%209.jpeg" style="width:200px; height: 200px" onclick="openModal();currentSlide(3)" class="hover-shadow cursor"></td>
+  </div>
+  <div class="column">
+  
+  </div></tr>
+    
+    
+    <tr><div class="column">
+   <td> <img src="Tatuaje%2010.jpeg" style="width:200px; height: 200px" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </td></div>
+  <div class="column">
+  <td>  <img src="Tatuaje%2011.jpeg" style="width:200px; height: 200px" onclick="openModal();currentSlide(2)" class="hover-shadow cursor"></td>
+  </div>
+  <div class="column">
+  <td>  <img src="Tatuaje%203.jpeg" style="width:200px; height: 200px" onclick="openModal();currentSlide(3)" class="hover-shadow cursor"></td>
+  </div>
+  <div class="column">
+  
+  </div></tr>
+    
+    
+</div>
+</table>
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 12</div>
+      <img src="Tatuaje%201.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 12</div>
+      <img src="Tatuaje%202.jpeg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 12</div>
+      <img src="Tatuaje%203.jpeg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 12</div>
+      <img src="Tatuaje%204.jpeg" style="width:100%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">5 / 12</div>
+      <img src="Tatuaje%205.jpeg" style="width:100%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">6 / 12</div>
+      <img src="Tatuaje%206.jpeg" style="width:100%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">7 / 12</div>
+      <img src="Tatuaje%207.jpeg" style="width:100%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">8 / 12</div>
+      <img src="Tatuaje%208.jpeg" style="width:100%">
+    </div>
+    
+       <div class="mySlides">
+      <div class="numbertext">9 / 12</div>
+      <img src="Tatuaje%209.jpeg" style="width:100%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">10 / 12</div>
+      <img src="Tatuaje%2010.jpeg" style="width:100%">
+    </div>
+      
+    
+     <div class="mySlides">
+      <div class="numbertext">11 / 12</div>
+      <img src="Tatuaje%2011.jpeg" style="width:100%">
+    </div>
+      
+         <div class="mySlides">
+      <div class="numbertext">12 / 12</div>
+      <img src="Tatuaje%203.jpeg" style="width:100%">
+    </div>
+      
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="Tatuaje%201.png" style="width:100%" onclick="currentSlide(1)" alt="Flor Chidorri">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Tatuaje%202.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Solecito Mamalon ">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Tatuaje%203.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Hoja de Mois">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Tatuaje%204.jpeg" style="width:100%" onclick="currentSlide(4)" alt="Automatación">
+    </div>
+      <div class="column">
+      <img class="demo cursor" src="Tatuaje%205.jpeg" style="width:100%" onclick="currentSlide(5)" alt="Flores en el Uyuyuy ">
+    </div>
+      <div class="column">
+      <img class="demo cursor" src="Tatuaje%206.jpeg" style="width:100%" onclick="currentSlide(6)" alt="Mariposa Fea">
+    </div>
+      <div class="column">
+      <img class="demo cursor" src="Tatuaje%207.jpeg" style="width:100%" onclick="currentSlide(7)" alt="MantaRaya">
+    </div>
+      <div class="column">
+      <img class="demo cursor" src="Tatuaje%208.jpeg" style="width:100%" onclick="currentSlide(8)" alt="Mas flores">
+    </div>
+      <div class="column">
+      <img class="demo cursor" src="Tatuaje%209.jpeg" style="width:100%" onclick="currentSlide(9)" alt="Mas Flores X2">
+    </div>
+      <div class="column">
+      <img class="demo cursor" src="Tatuaje%2010.jpeg" style="width:100%" onclick="currentSlide(10)" alt="El Arrimon">
+    </div>
+      <div class="column">
+      <img class="demo cursor" src="Tatuaje%2011.jpeg" style="width:100%" onclick="currentSlide(11)" alt="Que MAl trip">
+    </div>
+      <div class="column">
+      <img class="demo cursor" src="Tatuaje%203.jpeg" style="width:100%" onclick="currentSlide(12)" alt="Flor de MOIS x2">
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
+ <footer>
+    <table border="1"  style="background-color: white; border: 1px; width: 1200px; height: 200px align-items: flex-end; margin: 0 auto; text-align: justify">
+        <tr  style="background-color: black; text-align: center">
+            <td height="50px" > <b style="color: white">RENATA DEL AGIUILA 2020&#174;<br> </b></td>
+        
+            </tr>
+        
+    
+    </table></footer>   
+</body>
+</html>
